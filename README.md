@@ -1,0 +1,2 @@
+# randomJS
+JS practice
