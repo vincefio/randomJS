@@ -9,12 +9,22 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // c.fillRect(350, 100, 100, 100)
     // c.fillRect(100, 100, 100, 100)
     // c.fillRect(500, 600, 100, 100)
+    function getRandomColor() {
+      var letters = '0123456789ABCDEF';
+      var color = '#';
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
 
     //create 3 random squares
     for(var i = 0; i < 6; i++){
       var x = Math.random() * window.innerWidth
       var y = Math.random() * window.innerHeight
 
+      //var colorOne = getRandomColor()
+      c.fillStyle = `${getRandomColor()}`
       c.fillRect(x, y, 100, 100)
     }
 
@@ -26,5 +36,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     c.lineTo(500, 75)
     c.lineTo(800, 350)
     c.stroke()
+
+    //with html canvas we can draw rectangles, lines, arxcs, bezier, images, and text
 
   });
